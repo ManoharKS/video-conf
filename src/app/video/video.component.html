@@ -1,0 +1,2 @@
+<div id="publisherContainer"></div>
+<div *ngFor="let subscriber of subscribers" [attr.id]="'subscriberContainer-' + subscriber?.stream?.streamId"></div>
