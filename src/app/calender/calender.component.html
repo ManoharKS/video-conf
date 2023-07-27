@@ -1,0 +1,24 @@
+<div class="app">
+  <div class="app-top">
+    <button class="btn btn-primary" (click)="toggleVisible()">
+      toggle visible
+    </button>
+    <button class="btn btn-info m-1" (click)="toggleWeekends()">
+      toggle weekends
+    </button>
+    <button class="btn btn-success" (click)="gotoPast()">
+      go to a date in the past
+    </button>
+    (also, click a date/time to add an event)
+  </div>
+
+  <div class="app-calendar" *ngIf="calendarVisible">
+    <full-calendar
+      #calendar
+      defaultView="dayGridMonth"
+      [options]="calendarOptions"
+      [events]="calendarEvents"
+      (dateClick)="handleDateClick($event)"
+    ></full-calendar>
+  </div>
+</div>
